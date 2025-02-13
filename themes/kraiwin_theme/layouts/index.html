@@ -1,10 +1,7 @@
 {{ define "main" }}
-<div class="center_flex">
-    <img src="{{ .Site.Params.picture_path }}" id="photo_circle">
-</div>
 <div class="contact_box">
-    <a href="mailto:{{.Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a>
-    <a href="mailto:{{.Site.Params.contact.linkedin }}">{{ .Site.Params.contact.linkedin }}</a>
-    <a href="mailto:{{.Site.Params.contact.github}}">{{ .Site.Params.contact.github}}</a>
+    <a href="mailto:{{.Site.Params.contact.email }}">Mail</a>
+    <a href="mailto:{{.Site.Params.contact.linkedin }}">LinkedIn</a>
+    <a href="mailto:{{.Site.Params.contact.github}}">GitHub</a>
 </div>
 {{ end }}

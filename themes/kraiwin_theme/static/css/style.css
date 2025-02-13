@@ -1,20 +1,89 @@
-#photo_circle {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    object-fit: cover;
+@import url('https://fonts.cdnfonts.com/css/jetbrains-mono-2');
+
+:root {
+	--font-family: 'JetBrains Mono', monospace;
+	--line-height: 1.2rem;
+	--border-thickness: 2px;
+	--text-color: #000;
+	--text-color-alt: #666;
+	--background-color: #fff;
+	--background-color-alt: #eee;
+
+	--font-weight-normal: 500;
+	--font-weight-medium: 600;
+	--font-weight-bold: 800;
+
+	font-family: var(--font-family);
+	font-optical-sizing: auto;
+	font-weight: var(--font-weight-normal);
+	font-style: normal;
+	font-variant-numeric: tabular-nums lining-nums;
+	font-size: 16px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+html {
+	display: flex;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	flex-direction: column;
+	align-items: center;
+	background: var(--background-color);
+	color: var(--text-color);
+}
+
+body {
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: var(--line-height) 2ch;
+	max-width: 75%;
+	line-height: var(--line-height);
+	overflow-x: hidden;
+}
+
+/* Header Styling */
+table {
+	position: relative;
+	top: calc(var(--line-height) / 2);
+	width: calc(round(down, 100%, 1ch));
+	border-collapse: collapse;
+	margin: 0 0 calc(var(--line-height) * 2);
+}
+
+th,
+td {
+	border: var(--border-thickness) solid var(--text-color);
+	padding: calc((var(--line-height) / 2)) calc(1ch - var(--border-thickness) / 2)
+		calc((var(--line-height) / 2) - (var(--border-thickness)));
+	line-height: var(--line-height);
+	vertical-align: top;
+	text-align: left;
+}
+
+table tbody tr:first-child > * {
+	padding-top: calc((var(--line-height) / 2) - var(--border-thickness));
+}
+
+th {
+	font-weight: 700;
+}
+
+.width-min {
+	width: 0%;
+}
+
+.width-auto {
+	width: 100%;
+}
+
+/* Body Styling */
 .contact_box {
     width: 100%;
     display: flex;
     justify-content: space-around;
-}
-
-.center_flex {
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    margin-bottom: 15px;
 }

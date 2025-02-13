@@ -1,10 +1,10 @@
 baseURL: 'https://kraiwin.nl/'
 languageCode: 'en-us'
-title: 'Portfolio'
+title: 'Kraiwin Namsri'
 theme: kraiwin_theme
 params:
     contact:
         email: kraiwinrubian@gmail.com
         linkedin: https://www.linkedin.com/in/kraiwin/
         github: https://github.com/Kraiwin-Namsri/
-    picture_path: 'pasfoto.jpg'
+    occupation: Student
