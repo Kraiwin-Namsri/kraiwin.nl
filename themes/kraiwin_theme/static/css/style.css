@@ -81,9 +81,21 @@ th {
 	width: 100%;
 }
 
-/* Body Styling */
+/* Index Body Styling */
+ul {
+    padding-left: 15px;
+}
+
 .contact_box {
     width: 100%;
     display: flex;
     justify-content: space-around;
+}
+
+.avatar {
+    width: 400px;
+}
+
+#colored_img {
+    display: none;
 }

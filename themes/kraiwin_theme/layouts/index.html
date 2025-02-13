@@ -1,7 +1,28 @@
 {{ define "main" }}
-<div class="contact_box">
-    <a href="mailto:{{.Site.Params.contact.email }}">Mail</a>
-    <a href="mailto:{{.Site.Params.contact.linkedin }}">LinkedIn</a>
-    <a href="mailto:{{.Site.Params.contact.github}}">GitHub</a>
-</div>
+<table class="header" id="index_header">
+    <tbody>
+        <tr>
+            <td colspan="2" rowspan="2" class="width-auto">
+                <h1 class="title">{{ .Site.Params.name }}</h1>
+                <span class="subtitle">{{ .Site.Params.occupation }}</span>
+            </td>
+            <th>NICKNAMES</th>
+            <td class="width-min">PHOTO</td>
+        </tr>
+        <tr>
+            <th>
+                <ul>
+                    <li>Winus</li>
+                    <li>WING_WONG</li>
+                    <li>Kraiwinus</li>
+                </ul>
+            </th>
+            <td class="width-min">
+                <img alt="img" src="winus.svg" id="cartoon_img" class="avatar">
+                <img alt="img" src="pasfoto.jpg" id="colored_img" class="avatar">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<script src="js/script.js"></script>
 {{ end }}

@@ -1,8 +1,9 @@
 baseURL: 'https://kraiwin.nl/'
 languageCode: 'en-us'
-title: 'Kraiwin Namsri'
+title: Portfolio
 theme: kraiwin_theme
 params:
+    name: Kraiwin Namsri
     contact:
         email: kraiwinrubian@gmail.com
         linkedin: https://www.linkedin.com/in/kraiwin/
