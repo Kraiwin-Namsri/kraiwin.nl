@@ -9,3 +9,8 @@ params:
         linkedin: https://www.linkedin.com/in/kraiwin/
         github: https://github.com/Kraiwin-Namsri/
     occupation: Student
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    renderer:
+        unsafe: true

@@ -73,6 +73,29 @@ th {
 	font-weight: 700;
 }
 
+a:link {
+   color: var(--text-color);
+   text-decoration: none;
+}
+a:visited {
+   color: var(--text-color);
+   text-decoration: none;
+}
+a:hover {
+   color: var(--text-color);
+   text-decoration: underline;
+   text-decoration-thickness: var(--border-thickness);
+   text-underline-offset: calc(var(--line-height) / 2);
+}
+a:active {
+   color: var(--text-color);
+   text-decoration: none;
+}
+
+li {
+	margin: var(--line-height);
+}
+
 .width-min {
 	width: 0%;
 }
@@ -81,7 +104,6 @@ th {
 	width: 100%;
 }
 
-/* Index Body Styling */
 ul {
     padding-left: 15px;
 }
