@@ -1,0 +1,71 @@
+{{ define "main" }}
+<table class="content_table">
+  <tbody>
+    <tr>
+      <td class="width-auto">
+        <section>
+          {{ with .Date }}
+          {{ $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
+          {{ $dateHuman := . | time.Format ":date_long" }}
+          <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+          {{ end }}
+
+          {{ .Content }}
+          <h1>Work Experience</h1>
+          {{ range .Pages.ByDate.Reverse }}
+            {{ if eq .Params.Type "work_experience" }}
+              <section>
+                <h3>{{ .Title }}</h3>
+                <small>
+                <p>{{ .Params.Employer }} &middot; {{ .Params.Job_Type }}</p>
+                <p>
+                  {{/* Define start and end dates (defaults to now if no end date provided) */}}
+                  {{ $start := .Date }}
+                  {{ $end := .Params.End_Date | default now | time }}
+
+                  {{/* Format the start date */}}
+                  {{ with $start }}
+                    {{ $startMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
+                    {{ $startHuman := . | time.Format "January 2006" }}
+                    <time datetime="{{ $startMachine }}">{{ $startHuman }}</time>
+                  {{ end }}
+
+                  -
+                  
+                  {{/* Format the end date or show "Present" if not provided */}}
+                  {{ with .Params.End_Date }}
+                    {{ $endMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
+                    {{ $endHuman := . | time.Format "January 2006" }}
+                    <time datetime="{{ $endMachine }}">{{ $endHuman }}</time>
+                  {{ else }}
+                    <time datetime="{{ now | time.Format "2006-01-02T15:04:05-07:00" }}">Present</time>
+                  {{ end }}
+
+                  {{/* Calculate the duration */}}
+                  {{ $diff := sub $end.Unix $start.Unix }}
+                  {{ $years := div $diff 31536000 }}
+                  {{ $months := mod (div $diff 2592000) 12 }}
+
+                  {{/* Conditionally display the duration */}}
+                  &middot;
+                  {{ if gt $years 0 }}
+                    {{ $years }} year{{ if ne $years 1 }}s{{ end }}, {{ $months }} month{{ if ne $months 1 }}s{{ end }}
+                  {{ else }}
+                    {{ $months }} month{{ if ne $months 1 }}s{{ end }}
+                  {{ end }}
+                </p>
+                {{ .Params.Location }}
+                </small>
+                {{ .Content }}
+              </section>
+            {{ end }}
+          {{ end }}
+        </section>
+
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+{{ end }}

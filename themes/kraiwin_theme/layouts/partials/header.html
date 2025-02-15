@@ -2,8 +2,14 @@
 <tbody>
     <tr>
         <td colspan="2" rowspan="2" class="width-auto">
-                <h1 class="title"><a href="/">{{ .Site.Title }}</a></h1>
-                <span class="subtitle">DESCRIPTION</span>
+                <h1 class="title">
+                {{ if .IsHome }}
+                    <a href="/">PORTFOLIO</a>
+                {{ else }}
+                    <a href="/">&#60;</a> {{ .Page.Title }}
+                {{ end }}
+                </h1>
+                <span class="subtitle">{{ .Path }}</span>
 
             </td>
             <th><a href="/about">About</a></th>
