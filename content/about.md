@@ -14,7 +14,8 @@ Topics I am currently interested in:
 My hobby's are:
 - Learning and doing new things
 - Badminton
-- Listening to music
 - Going to techno party's
+- DJing
+- Bullying my cat
 
-If you are interested in my curriculum vitae, you can find it <a href="/cv">here</a>.
+If you are interested in my <a href="/cv">curriculum vitae</a>, you can find it <a href="/cv">here</a>.

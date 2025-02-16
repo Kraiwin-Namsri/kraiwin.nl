@@ -1,5 +1,5 @@
 ---
-title: CV
+title: Curriculum vitae
 date: 2025-02-15T00:00:00+01:00
 draft: false
 ---

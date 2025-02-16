@@ -9,7 +9,15 @@
                     <a href="/">{{ .Page.Title }}</a>
                 {{ end }}
                 </h1>
-                <span class="subtitle">{{ .Path }}</span>
+                <span class="subtitle">
+                {{ $path := "" }}
+                {{ with .File }}
+                        {{ $path = .Path }}
+                {{ else }}
+                        {{ $path = .Path }}
+                {{ end }}
+                {{ $path }}
+                </span>
 
             </td>
             <th><a href="/about">About</a></th>
