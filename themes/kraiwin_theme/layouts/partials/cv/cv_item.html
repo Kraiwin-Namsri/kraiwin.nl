@@ -1,53 +1,48 @@
 <section>
   <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
   <section>
-      <p>{{ .Params.Employer }}
-        {{ with .Params.Job_Type }}
-        &middot; {{ . }}
-        {{ end }}
-      </p>
-      {{/* Define start and end dates (defaults to now if no end date provided) */}}
-      {{ $start := .Date }}
-      {{ $end := .Params.End_Date | default now | time }}
-
-      {{/* Format the start date */}}
-      {{ with $start }}
-        {{ $startMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
-
-        {{ $startHuman := . | time.Format "January 2006" }}
-        <time datetime="{{ $startMachine }}">{{ $startHuman }}</time>
+    <p>{{ .Params.Employer }}
+      {{ with .Params.Job_Type }}
+      &middot; {{ . }}
       {{ end }}
+    </p>
+    {{/* Define start and end dates (defaults to now if no end date provided) */}}
+    {{ $start := .Date }}
+    {{ $end := .Params.End_Date | default now | time }}
+
+    {{/* Format the start date */}}
+    <p>
+      {{ partial "date.html" (dict "Date" $start) }}
       -
-      
+
       {{/* Format the end date or show "Present" if not provided */}}
       {{ with .Params.End_Date }}
-      {{ $endMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
-      {{ $endHuman := . | time.Format "January 2006" }}
-      <time datetime="{{ $endMachine }}">{{ $endHuman }}</time>
+      {{ partial "date.html" (dict "Date" .) }}
       {{ else }}
-      <time datetime="{{ now | time.Format "2006-01-02T15:04:05-07:00" }}">Present</time>
+      <time datetime="{{ now | time.Format " 2006-01-02T15:04:05-07:00" }}">Present</time>
       {{ end }}
-      
+
       {{/* Calculate the duration */}}
       {{ $diff := sub $end.Unix $start.Unix }}
       {{ $years := div $diff 31556952 }}
       {{ $months := mod (div $diff 2629746) 12 }}
-      
+
       {{/* Adjust months and years if necessary */}}
       {{ if eq $months 11 }}
       {{ $years = add $years 1 }}
       {{ $months = 0 }}
       {{ end }}
-      
+
       {{/* Conditionally display the duration */}}
       &middot;
       {{ if gt $years 0 }}
-      {{ $years }} year{{ if ne $years 1 }}s{{ end }}{{ if gt $months 0 }}, {{ $months }} month{{ if ne $months 1 }}s{{ end }}{{ end }}
+      {{ $years }} year{{ if ne $years 1 }}s{{ end }}{{ if gt $months 0 }}, {{ $months }} month{{ if ne $months 1 }}s{{
+      end }}{{ end }}
       {{ else }}
       {{ $months }} month{{ if ne $months 1 }}s{{ end }}
       {{ end }}
     </p>
-    {{ .Params.Location }}
+    <p>{{ .Params.Location }}</p>
   </section>
   {{ .Description }}
 </section>
