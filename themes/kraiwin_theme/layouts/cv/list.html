@@ -24,7 +24,7 @@
           <article>
             {{ .Content }}
           </article>
-          {{ range .Pages.ByDate.Reverse }}
+          {{ range (.Pages.ByParam "end_date").Reverse }}
             {{ if eq .Params.Type "work_experience" }}
               {{ partial "cv/cv_item.html" . }}
             {{ end }}
@@ -40,7 +40,7 @@
     <tr>
       <td class="width-auto">
         <section>
-          {{ range .Pages.ByDate.Reverse }}
+          {{ range (.Pages.ByParam "end_date").Reverse }}
             {{ if eq .Params.Type "project" }}
               {{ partial "cv/cv_item.html" . }}
             {{ end }}
@@ -56,7 +56,7 @@
     <tr>
       <td class="width-auto">
         <section>
-          {{ range .Pages.ByDate.Reverse }}
+          {{ range (.Pages.ByParam "end_date").Reverse }}
             {{ if eq .Params.Type "education" }}
               {{ partial "cv/cv_item.html" . }}
             {{ end }}
@@ -72,7 +72,7 @@
     <tr>
       <td class="width-auto">
         <section>
-          {{ range .Pages.ByDate.Reverse }}
+          {{ range .Pages.ByParam "end_date" }}
             {{ if eq .Params.Type "certificate" }}
               {{ partial "cv/certificate_item.html" . }}
             {{ end }}
