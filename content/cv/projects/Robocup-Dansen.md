@@ -3,7 +3,8 @@ title: Robocup Junior - Dancing
 employer: Bornwaterschool
 job_type: Parttime
 type: project
-date: 2015-10-01T00:00:00+01:00
+date: 2025-02-15T00:00:00+01:00
+start_date: 2015-10-01T00:00:00+01:00
 end_date: 2016-04-01T00:00:00+01:00
 location: Eindhoven, Noord-Holland, Netherlands
 draft: false

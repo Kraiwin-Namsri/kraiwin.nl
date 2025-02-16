@@ -7,8 +7,7 @@
         {{ end }}
       </p>
       {{/* Define start and end dates (defaults to now if no end date provided) */}}
-      {{ $start := .Date }}
-      {{ $end := .Params.End_Date | default now | time }}
+      {{ $start := .Params.Issue_Date }}
 
       {{/* Format the start date */}}
       {{ with $start }}

@@ -3,7 +3,8 @@ title: Tijd om te tellen (Technasium graduation project)
 employer: Ichthus Lyceum
 job_type: Parttime
 type: project
-date: 2022-06-01T00:00:00+01:00
+date: 2025-02-15T00:00:00+01:00
+start_date: 2022-06-01T00:00:00+01:00
 end_date: 2023-03-01T00:00:00+01:00
 location: Driehuis, Noord-Holland, Netherlands
 draft: false

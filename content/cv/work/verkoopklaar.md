@@ -3,7 +3,8 @@ title: Sales-Ready Employee
 type: work_experience
 employer: Ahold Delhaize
 job_type: Parttime
-date: 2020-07-01T00:00:00+01:00
+date: 2025-02-15T00:00:00+01:00
+start_date: 2020-07-01T00:00:00+01:00
 end_date: 2021-12-01T00:00:00+01:00
 location: Overveen, Noord-Holland, Netherlands
 draft: false
