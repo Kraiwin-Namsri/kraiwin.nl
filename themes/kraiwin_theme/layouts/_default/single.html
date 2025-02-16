@@ -4,11 +4,11 @@
         <tr>
             <td class="width-auto">
                 <section>
-                    {{ with .Date }}
-                    {{ $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
-                    {{ $dateHuman := . | time.Format ":date_long" }}
-                    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-                    {{ end }}
+                    {{ partial "date.html" . }}
+                </section>
+            </td>
+        <tr>
+        <td class="width-auto">
                     <article>
                         {{ .Content }}
                     </article>

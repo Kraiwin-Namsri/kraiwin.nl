@@ -1,0 +1,25 @@
+<section>
+  <h3><a href="{{ .Params.Link }}">{{ .Title }}</a></h3>
+  <section>
+      <p>{{ .Params.Employer }}
+        {{ with .Params.Job_Type }}
+        &middot; {{ . }}
+        {{ end }}
+      </p>
+      {{/* Define start and end dates (defaults to now if no end date provided) */}}
+      {{ $start := .Date }}
+      {{ $end := .Params.End_Date | default now | time }}
+
+      {{/* Format the start date */}}
+      {{ with $start }}
+        {{ $startMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
+
+        {{ $startHuman := . | time.Format "January 2006" }}
+        <time datetime="{{ $startMachine }}">{{ $startHuman }}</time>
+      {{ end }}
+    </p>
+    {{ .Params.Location }}
+  </section>
+  {{ .Content }}
+</section>
+
