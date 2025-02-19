@@ -1,0 +1,19 @@
+{
+  "canisters": {
+    "frontend": {
+      "source": [
+        "public"
+      ],
+      "type": "assets",
+      "workspace": "public"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

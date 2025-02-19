@@ -1,0 +1,5 @@
+*
+!.gitignore
+!.well-known
+!.well-known/*
+!.ic-assets.json
