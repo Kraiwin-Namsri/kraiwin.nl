@@ -40,7 +40,7 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          hugo --minify --baseURL "/"
+          hugo --baseURL "/"
 
       - name: Install DFX
         uses: dfinity/setup-dfx@main

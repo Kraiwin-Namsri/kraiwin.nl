@@ -3,6 +3,9 @@ title: "Migrating your site to the Internet Computer (IC)"
 date: 2025-02-19T12:42:00+01:00
 draft: false
 ---
+Recently, This site migrated from Github pages to the Internet Computer.
+See <a href="https://github.com/Kraiwin-Namsri/kraiwin.nl">Github</a> for the sourcecode.
+
 ## What is the Internet Computer (IC)?
 The **Internet Computer (IC)** is a blockchain that goes beyond simple ledger transactions, offering a decentralized computing platform. It provides an alternative to traditional cloud services like AWS and Azure by:
 
@@ -11,7 +14,8 @@ The **Internet Computer (IC)** is a blockchain that goes beyond simple ledger tr
 - Enabling **decentralized AI** applications.
 - Potential for mainstream adoption if there is support for hosting **PHP or WordPress** sites.
 
-## Prerequisites
+## How to migrate your site?
+
 Before migrating your static website, ensure you have:
 - A [set up](https://internetcomputer.org/docs/current/developer-docs/getting-started/install) **IC development environment**.
 - Access to the [Network Nervous System (NNS)](https://nns.ic0.app/).
