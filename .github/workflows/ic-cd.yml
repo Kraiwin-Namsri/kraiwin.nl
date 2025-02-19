@@ -35,11 +35,6 @@ jobs:
       - name: Install Dart Sass
         run: sudo snap install dart-sass
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
@@ -75,9 +70,6 @@ jobs:
           fi
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-
-      - name: Install Node.js dependencies for deployment
-        run: npm install
 
       - name: Deploy to Mainnet
         run: dfx deploy --network=ic --no-wallet portal
