@@ -66,5 +66,5 @@ jobs:
       - name: Get URL
         id: get-url
         run: |
-          URL="https://$(cat "$GITHUB_WORKSPACE/canister_ids.json" | jq -r '.portal.ic').raw.ic0.app"
+          URL="https://kraiwin.nl"
           echo "::set-output name=url::$URL"
