@@ -1,0 +1,35 @@
+{{ define "main" }}
+<table class="content_table">
+  <tbody>
+    <tr>
+      <td class="width-auto">
+        <section>
+          Last Update:
+          {{ with .Pages.ByDate.Reverse }}
+              {{ $dateMachine := (index . 0).Date.Format "2006-01-02T15:04:05-07:00" }}
+              {{ $dateHuman := (index . 0).Date.Format "January 2, 2006" }}
+              <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+          {{ end }}
+        </section>
+      </td>
+    </tr>
+    <tr>
+      <td class="width-auto">
+        <h1>Posts</h1>
+      </td>
+    </tr>
+    <tr>
+      <td class="width-auto">
+        <section>
+          <article>
+            {{ .Content }}
+          </article>
+          {{ range .Pages }}
+            {{ partial "blog/blog_item.html" . }}
+          {{ end }}
+        </section>
+      </td>
+    </tr>
+  </tbody>
+</table>
+{{ end }}

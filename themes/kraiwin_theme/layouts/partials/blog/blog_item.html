@@ -1,0 +1,9 @@
+<section>
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <section>
+    <p>
+      {{ partial "date.html" (dict "Date" .Date) }}
+    </p>
+  </section>
+  {{ .Description }}
+</section>
