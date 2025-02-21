@@ -61,7 +61,9 @@ jobs:
           echo "Canister balance: $balance_formatted"
 
       - name: Deploy to Mainnet
-        run: dfx deploy --network=ic --no-wallet
+        run: |
+          export DFX_WARNING="-mainnet_plaintext_identity"
+          dfx deploy --network=ic --no-wallet
 
       - name: Get URL
         id: get-url
