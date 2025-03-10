@@ -8,6 +8,7 @@
 	--text-color-alt: #666;
 	--background-color: #fff;
 	--background-color-alt: #eee;
+	--accent-color: #007bff;
 
 	--font-weight-normal: 500;
 	--font-weight-medium: 600;
@@ -80,11 +81,11 @@ a {
 	text-underline-offset: calc(var(--line-height) / 6);
 }
 
-.contact_box a, .header a {
+#contact-box a, .header a {
 	text-decoration: none;
 }   
 
-.contact_box a:hover, .header a:hover {
+#contact-box a:hover, .header a:hover {
 	text-decoration: underline;
 	text-decoration-thickness: var(--border-thickness);
 	text-underline-offset: calc(var(--line-height) / 2);
@@ -108,7 +109,8 @@ ul {
     padding-left: 15px;
 }
 
-.contact_box {
+#contact-box {
+	padding: 10px 0px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -125,4 +127,14 @@ ul {
 .subtitle {
 	margin-left: 5px;
 	margin-bottom: 0;
+}
+
+@keyframes flash {
+	0% { background-color: var(--background-color) }
+	50% { background-color:	var(--accent-color); }
+	100% { background-color: var(--background-color) }
+}
+
+.flash-once {
+	animation: flash 1s;
 }
