@@ -16,3 +16,12 @@ Within the team, I was responsible for telemetry and the electrical system. In m
 In 2023, we focused on redesigning the telemetry system, applying lessons learned from the previous version to create a more modular setup. We rebuilt the system using a Raspberry Pi and integrated Grafana for data visualization. That year, we placed 8th in a combination of agility, endurance, and sprint races.  
 
 As I was graduating from high school that same year and preparing to leave the team, I dedicated myself to passing on my knowledge to younger students. With this, I aimed to help establish the ITT (*Ichthus Top Talent*) team as a consistently top-performing competitor in future races.
+
+I was on the TUSBC journal explaining some of the design choices we made at the very start of the telemetry system.
+Watch <a href="https://youtu.be/byUVZvcJLS0?si=-PeYYF6qczA-sBBO&t=217">here</a>
+
+<img src="/TUSBC/boat.jpg" width=500>
+<img src="/TUSBC/all_boats.jpg" width=500>
+<img src="/TUSBC/team.jpg" width=500>
+<img src="/TUSBC/small_team.jpg" width=500>
+<img src="/TUSBC/me_at_laptop.jpeg" width=500>
