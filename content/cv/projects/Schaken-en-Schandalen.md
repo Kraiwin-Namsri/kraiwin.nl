@@ -12,3 +12,7 @@ draft: false
 This project enables playing chess in Augmented Reality against the computer (StockFish) on the Microsoft HoloLens 2. Players can pick up and move pieces, and during movement, suggestions for possible moves are provided.
 
 Through this project, we were introduced to Augmented Reality for the Microsoft HoloLens 2 for the first time. We used the Mixed Reality Toolkit in Unity to develop the application. This was our final project for Computer Science, for which we received grades of 9.5 and 8.5.
+
+Code can be found <a href="https://github.com/Kraiwin-Namsri/Schaken-Schandalen">here</a>.
+
+<img src="/Schaken-en-Schandalen/video.gif">
