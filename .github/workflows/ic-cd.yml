@@ -69,4 +69,4 @@ jobs:
         id: get-url
         run: |
           URL="https://kraiwin.nl"
-          echo "::set-output name=url::$URL"
+          echo "url=$URL" >> $GITHUB_OUTPUT
