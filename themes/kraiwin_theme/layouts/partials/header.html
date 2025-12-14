@@ -1,32 +1,24 @@
-<table class="header">
-<tbody>
-    <tr>
-        <td colspan="2" rowspan="2" class="width-auto">
-                <h1 class="title">
-                {{ if .IsHome }}
-                    <a href="/">PORTFOLIO</a>
-                {{ else }}
-                    <a href="/">{{ .Page.Title }}</a>
-                {{ end }}
-                </h1>
-                <span class="subtitle">
-                {{ $path := "" }}
-                {{ with .File }}
-                        {{ $path = .Path }}
-                {{ else }}
-                        {{ $path = .Path }}
-                {{ end }}
-                {{ $path }}
-                </span>
-
-            </td>
-            <th><a href="/about">About</a></th>
-            <td class="width-min"><a href="/blog">BLOG</a></td>
-        </tr>
-        <tr>
-            <th><a id="contact-button">contact</a></th>
-            <td class="width-min">
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="layout-grid header-grid grid-header">
+    <div class="area-title">
+        <h1 class="title">
+        {{ if .IsHome }}
+            <a href="/">PORTFOLIO</a>
+        {{ else }}
+            <a href="/">{{ .Page.Title }}</a>
+        {{ end }}
+        </h1>
+        <span class="subtitle">
+        {{ $path := "" }}
+        {{ with .File }}
+                {{ $path = .Path }}
+        {{ else }}
+                {{ $path = .Path }}
+        {{ end }}
+        {{ $path }}
+        </span>
+    </div>
+    <div class="area-about" style="font-weight: 700;"><a href="/about">About</a></div>
+    <div class="area-blog"><a href="/blog">BLOG</a></div>
+    <div class="area-contact" style="font-weight: 700;"><a id="contact-button">contact</a></div>
+    <div class="area-empty"></div>
+</div>
