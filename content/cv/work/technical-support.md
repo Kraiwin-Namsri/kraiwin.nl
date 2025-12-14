@@ -3,8 +3,9 @@ title: Technical Support
 type: work_experience
 employer: O=O
 job_type: Parttime
-date: 2025-02-15T00:00:00+01:00
+date: 2025-12-14T00:00:00+01:00
 start_date: 2023-05-01T00:00:00+01:00
+end_date: 2026-01-01T00:00:00+01:00
 location: Haarlem, Noord-Holland, Netherlands
 draft: false
 ---
