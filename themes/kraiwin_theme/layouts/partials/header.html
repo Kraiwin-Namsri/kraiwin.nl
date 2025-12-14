@@ -4,7 +4,7 @@
         {{ if .IsHome }}
             <a href="/">PORTFOLIO</a>
         {{ else }}
-            <a href="/">{{ .Page.Title }}</a>
+            <a href="{{ .Parent.RelPermalink }}">{{ .Page.Title }}</a>
         {{ end }}
         </h1>
         <span class="subtitle">
