@@ -42,37 +42,12 @@ body {
 	width: 100%;
 	margin: 0;
 	padding: var(--line-height) 2ch;
-	max-width: 75%;
+	max-width: 95%; /* Increased for better mobile use, overridden for desktop below */
 	line-height: var(--line-height);
 	overflow-x: hidden;
 }
 
-/* Header Styling */
-table {
-	position: relative;
-	top: calc(var(--line-height) / 2);
-	width: calc(round(down, 100%, 1ch));
-	border-collapse: collapse;
-	margin: 0 0 calc(var(--line-height) * 2);
-}
 
-th,
-td {
-	border: var(--border-thickness) solid var(--text-color);
-	padding: calc((var(--line-height) / 2)) calc(1ch - var(--border-thickness) / 2)
-		calc((var(--line-height) / 2) - (var(--border-thickness)));
-	line-height: var(--line-height);
-	vertical-align: top;
-	text-align: left;
-}
-
-table tbody tr:first-child > * {
-	padding-top: calc((var(--line-height) / 2) - var(--border-thickness));
-}
-
-th {
-	font-weight: 700;
-}
 
 a {
 	color: var(--text-color);
@@ -81,28 +56,18 @@ a {
 	text-underline-offset: calc(var(--line-height) / 6);
 }
 
-#contact-box a, .header a {
+#contact-box a, .grid-header a {
 	text-decoration: none;
 }   
 
-#contact-box a:hover, .header a:hover {
+#contact-box a:hover, .grid-header a:hover {
 	text-decoration: underline;
 	text-decoration-thickness: var(--border-thickness);
 	text-underline-offset: calc(var(--line-height) / 2);
 }
 
-
-
 li {
 	margin: var(--line-height);
-}
-
-.width-min {
-	width: 0%;
-}
-
-.width-auto {
-	width: 100%;
 }
 
 ul {
@@ -117,7 +82,9 @@ ul {
 }
 
 .avatar {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
 }
 
 #colored_img {
@@ -137,4 +104,98 @@ ul {
 
 .flash-once {
 	animation: flash 1s;
+}
+
+/* NEW LAYOUT SYSTEM */
+
+/* 
+   Robust Border System using Gap Trick 
+   1. Container background is the border color.
+   2. Gap creates the internal borders.
+   3. Container border creates the external border.
+   4. Children have page background color.
+*/
+
+.layout-grid, .content-list {
+    width: 100%;
+    margin-bottom: calc(var(--line-height) * 2);
+    
+    /* The Border Magic */
+    background-color: var(--text-color);
+    border: var(--border-thickness) solid var(--text-color);
+    gap: var(--border-thickness);
+}
+
+.layout-grid {
+    display: grid;
+}
+
+.content-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Apply background to all direct children to reveal the 'borders' (gaps) */
+.layout-grid > *, .content-list > * {
+    background-color: var(--background-color);
+    padding: calc((var(--line-height) / 2)) calc(1ch - var(--border-thickness) / 2);
+    
+    /* Ensure no borders on children themselves */
+    border: none;
+}
+
+/* Header Grid Structure */
+.header-grid {
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas: 
+        "title about blog"
+        "title contact empty";
+}
+
+.area-title { grid-area: title; }
+.area-about { grid-area: about; }
+.area-blog  { grid-area: blog; }
+.area-contact { grid-area: contact; }
+.area-empty { grid-area: empty; }
+
+/* Profile Grid Structure (Index) */
+.profile-grid {
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas:
+        "info nick photo-label"
+        "info list photo-img";
+}
+
+.area-info { grid-area: info; }
+.area-nick { grid-area: nick; }
+.area-list { grid-area: list; }
+.area-photo-label { grid-area: photo-label; }
+.area-photo-img { grid-area: photo-img; }
+
+
+
+/* Responsive Logic */
+@media (min-width: 768px) {
+    body {
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 768px) {
+    .layout-grid {
+        display: flex;
+        flex-direction: column;
+        /* Gap and Background still handle borders automatically! */
+    }
+    
+    .header-grid, .profile-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Fix image width on mobile */
+    #cartoon_img, #colored_img {
+        width: 100% !important;
+        height: auto;
+    }
 }

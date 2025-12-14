@@ -1,8 +1,6 @@
 {{ define "main" }}
-<table class="content_table">
-  <tbody>
-    <tr>
-      <td class="width-auto">
+<div class="content-list">
+  <div class="content-item">
         <section>
           Last Update:
           {{ with .Pages.ByDate.Reverse }}
@@ -11,15 +9,11 @@
               <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
           {{ end }}
         </section>
-      </td>
-    </tr>
-    <tr>
-      <td class="width-auto">
+  </div>
+  <div class="content-item">
         <h1>Work Experience</h1>
-      </td>
-    </tr>
-    <tr>
-      <td class="width-auto">
+  </div>
+  <div class="content-item">
         <section>
           <article>
             {{ .Content }}
@@ -30,15 +24,11 @@
             {{ end }}
           {{ end }}
         </section>
-      </td>
-    </tr>
-    <tr>
-      <td class="width-auto">
+  </div>
+  <div class="content-item">
         <h1>Projects</h1>
-      </td>
-    </tr>
-    <tr>
-      <td class="width-auto">
+  </div>
+  <div class="content-item">
         <section>
           {{ range (.Pages.ByParam "end_date").Reverse }}
             {{ if eq .Params.Type "project" }}
@@ -46,15 +36,11 @@
             {{ end }}
           {{ end }}
         </section>
-      </td>
-    </tr>
-    <tr>
-      <td class="width-auto">
+  </div>
+  <div class="content-item">
         <h1>Education</h1>
-      </td>
-    </tr>
-    <tr>
-      <td class="width-auto">
+  </div>
+  <div class="content-item">
         <section>
           {{ range (.Pages.ByParam "end_date").Reverse }}
             {{ if eq .Params.Type "education" }}
@@ -62,15 +48,11 @@
             {{ end }}
           {{ end }}
         </section>
-      </td>
-    </tr>
-    <tr>
-      <td class="width-auto">
+  </div>
+  <div class="content-item">
         <h1>Certificates</h1>
-      </td>
-    </tr>
-    <tr>
-      <td class="width-auto">
+  </div>
+  <div class="content-item">
         <section>
           {{ range .Pages.ByParam "end_date" }}
             {{ if eq .Params.Type "certificate" }}
@@ -78,8 +60,6 @@
             {{ end }}
           {{ end }}
         </section>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  </div>
+</div>
 {{ end }}
